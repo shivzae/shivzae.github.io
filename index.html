@@ -28,6 +28,10 @@
   body{
     margin:0;
     background:var(--paper);
+    background-image:
+      linear-gradient(rgba(20,26,23,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20,26,23,0.035) 1px, transparent 1px);
+    background-size:42px 42px;
     color:var(--ink);
     font-family:'IBM Plex Sans', sans-serif;
     font-size:16px;
@@ -145,15 +149,32 @@
   .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
 
   /* active cell widget */
-  .active-cell{
+  .hero-visual{
     position:relative;
+    max-width:320px;
+    margin-left:auto;
+  }
+  .hero-photo{
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    background:var(--panel);
+  }
+  .hero-photo img{
+    width:100%; height:100%;
+    object-fit:cover; object-position:top;
+    display:block;
+  }
+  .active-cell{
+    position:absolute;
+    left:-32px; bottom:-32px;
     background:#fff;
     border:1.5px solid var(--teal);
     border-radius:6px;
-    padding:26px 24px 22px;
-    box-shadow:0 0 0 3px var(--teal-tint);
-    max-width:320px;
-    margin-left:auto;
+    padding:22px 20px 18px;
+    box-shadow:0 0 0 3px var(--teal-tint), 0 12px 28px -12px rgba(20,26,23,0.25);
+    max-width:220px;
   }
   .cell-ref{
     position:absolute; top:-13px; left:16px;
@@ -167,15 +188,15 @@
     display:block;
     font-family:'IBM Plex Mono', monospace;
     font-weight:500;
-    font-size:38px;
+    font-size:32px;
     color:var(--ink);
     transition:opacity .25s ease;
   }
   .cell-label{
     display:block;
-    font-size:14px;
+    font-size:13px;
     color:var(--ink-soft);
-    margin-top:6px;
+    margin-top:5px;
     transition:opacity .25s ease;
   }
   .fill-handle{
@@ -321,7 +342,8 @@
 
   @media (max-width: 860px){
     .hero-inner{grid-template-columns:1fr;}
-    .active-cell{margin:0 auto; max-width:280px;}
+    .hero-visual{margin:0 auto; max-width:260px;}
+    .active-cell{left:-16px; bottom:-24px; max-width:190px; padding:16px 16px 14px;}
     .about-grid, .contact-grid{grid-template-columns:1fr;}
     .proj-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:repeat(2,1fr); row-gap:28px;}
@@ -363,11 +385,16 @@
         <a class="btn" href="assets/resume_shivani.pdf" download>Download résumé ↓</a>
       </div>
     </div>
-    <div class="active-cell" id="activeCell" aria-live="polite">
-      <span class="cell-ref" id="cellRef">B7</span>
-      <span class="cell-value" id="cellValue">75%</span>
-      <span class="cell-label" id="cellLabel">learner retention lift</span>
-      <span class="fill-handle" aria-hidden="true"></span>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="assets/images/pp2.jpeg" alt="Shivani Karikalan">
+      </div>
+      <div class="active-cell" id="activeCell" aria-live="polite">
+        <span class="cell-ref" id="cellRef">B7</span>
+        <span class="cell-value" id="cellValue">75%</span>
+        <span class="cell-label" id="cellLabel">learner retention lift</span>
+        <span class="fill-handle" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -597,7 +624,7 @@
     <div class="contact-grid reveal">
       <div class="contact-copy">
         <h2>Let's talk data.</h2>
-        <p>Open to business analyst, product analyst, and marketing analytics roles. The fastest way to reach me is email — I usually reply within a day.</p>
+        <p>Open to business analyst, product analyst, and marketing analytics roles. The fastest way to reach me is email,I usually reply within a day.</p>
         <div class="direct-links">
           <a href="mailto:kshivanidarshana@gmail.com"><span class="k">Email</span> kshivanidarshana@gmail.com</a>
           <a href="https://linkedin.com/in/shivanidk" target="_blank" rel="noopener"><span class="k">LinkedIn</span> /in/shivanidk</a>
