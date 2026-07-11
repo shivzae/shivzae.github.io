@@ -1,237 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--💡UPDATE: Change the title to your name-->
-    <title>Shivani Darshana| Business Analyst Portfolio </title>
-      
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
-    <link rel="icon" type="image/png" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/favicon-32x32.png">
-    
-    <!-- Google Fonts for Elegant Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Your Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani Karikalan — Business Analyst</title>
+<meta name="description" content="Shivani Karikalan — Business Analyst in Chicago, IL. Product and marketing analytics, dashboards, and data-driven decision making.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F6F0;
+    --panel:#ECEEE5;
+    --ink:#141A17;
+    --ink-soft:#52584F;
+    --line:#D6DACC;
+    --teal:#0E6E5A;
+    --teal-deep:#0A4A3D;
+    --teal-tint:#E1EFE9;
+    --amber:#DC8A31;
+    --amber-tint:#FBEBD7;
+    --radius:10px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .col-letter{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--teal);
+    border:0.5px solid var(--line);
+    width:24px; height:24px;
+    display:inline-flex; align-items:center; justify-content:center;
+    border-radius:4px;
+    background:var(--panel);
+  }
+  .section-head{
+    display:flex; align-items:center; justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+    margin-bottom:36px;
+  }
+  .section-head h2{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:34px;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  section{padding:88px 0;}
+
+  /* ---------- HEADER / NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,246,240,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:0.04em;
+    text-decoration:none;
+  }
+  .brand span{color:var(--teal);}
+  .navlinks{
+    display:flex; gap:28px; align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  .navlinks a:hover{color:var(--teal);}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    padding:9px 16px;
+    border-radius:6px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .btn:hover{background:var(--ink); color:var(--paper);}
+  .btn.primary{
+    background:var(--teal); border-color:var(--teal); color:#fff;
+  }
+  .btn.primary:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--teal); outline-offset:3px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:80px 0 90px;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:42px 42px;
+    background-position:center top;
+    -webkit-mask-image:linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image:linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  .hero-inner{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
+  }
+  .hero h1{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:clamp(40px, 5vw, 60px);
+    line-height:1.08;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{color:var(--teal); font-style:italic;}
+  .hero p.lede{
+    font-size:17px;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin:0 0 32px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* active cell widget */
+  .active-cell{
+    position:relative;
+    background:#fff;
+    border:1.5px solid var(--teal);
+    border-radius:6px;
+    padding:26px 24px 22px;
+    box-shadow:0 0 0 3px var(--teal-tint);
+    max-width:320px;
+    margin-left:auto;
+  }
+  .cell-ref{
+    position:absolute; top:-13px; left:16px;
+    background:var(--teal); color:#fff;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; font-weight:500;
+    padding:2px 8px; border-radius:4px;
+    letter-spacing:0.04em;
+  }
+  .cell-value{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:38px;
+    color:var(--ink);
+    transition:opacity .25s ease;
+  }
+  .cell-label{
+    display:block;
+    font-size:14px;
+    color:var(--ink-soft);
+    margin-top:6px;
+    transition:opacity .25s ease;
+  }
+  .fill-handle{
+    position:absolute; bottom:-4px; right:-4px;
+    width:8px; height:8px;
+    background:var(--teal);
+    border:1px solid #fff;
+  }
+  .fade-out .cell-value, .fade-out .cell-label{opacity:0;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:56px;}
+  .about-copy p{font-size:16.5px; color:var(--ink-soft); max-width:60ch;}
+  .about-copy p strong{color:var(--ink); font-weight:500;}
+  .stat-row{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:22px 28px;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+  }
+  .stat-row div{border-left:2px solid var(--teal); padding-left:14px;}
+  .stat-row .label{font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.08em; color:var(--ink-soft); text-transform:uppercase; display:block; margin-bottom:5px;}
+  .stat-row .value{font-size:14.5px; color:var(--ink);}
+
+  /* ---------- EXPERIENCE (ledger) ---------- */
+  .role{
+    border-top:1px solid var(--line);
+    padding:28px 0;
+    display:grid; grid-template-columns:230px 1fr; gap:32px;
+  }
+  .role:last-child{border-bottom:1px solid var(--line);}
+  .role-meta .dates{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--teal);}
+  .role-meta .place{font-size:12.5px; color:var(--ink-soft); margin-top:4px;}
+  .role-body h3{font-size:18px; margin:0 0 3px; font-weight:600;}
+  .role-body .title{font-size:14px; color:var(--ink-soft); font-style:italic; margin-bottom:14px;}
+  .role-body ul{margin:0; padding-left:18px;}
+  .role-body li{margin-bottom:8px; color:var(--ink-soft); font-size:15px;}
+  .role-body li::marker{color:var(--teal);}
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:24px;
+  }
+  .card{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:border-color .18s, transform .18s;
+  }
+  .card:hover{border-color:var(--teal); transform:translateY(-3px);}
+  .card-media{
+    height:150px; background:var(--panel);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden; position:relative;
+  }
+  .card-media img{width:100%; height:100%; object-fit:cover; object-position:top;}
+  .card-body{padding:20px 22px 22px; display:flex; flex-direction:column; flex:1;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;}
+  .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    background:var(--teal-tint); color:var(--teal-deep);
+    padding:3px 8px; border-radius:4px;
+  }
+  .card-body h3{font-size:17px; margin:0 0 8px; font-weight:600;}
+  .card-body p{font-size:14px; color:var(--ink-soft); margin:0 0 16px; flex:1;}
+  .card-link{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    color:var(--teal); text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .card-link:hover{text-decoration:underline;}
+  .card-nolink{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft);}
+
+  /* donut / heatmap mini visuals */
+  .mini-donut{width:74px; height:74px;}
+  .heat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:4px; width:96px;}
+  .heat-cell{width:20px; height:20px; border-radius:3px; background:var(--teal);}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .skill-col{padding:0 20px 0 0; border-left:1px solid var(--line);}
+  .skill-col:first-child{border-left:none; padding-left:0;}
+  .skill-col .col-letter{margin-bottom:14px;}
+  .skill-col h4{font-size:14px; margin:0 0 14px; color:var(--ink-soft); font-weight:500;}
+  .skill-col ul{list-style:none; margin:0; padding:0;}
+  .skill-col li{
+    font-size:14.5px; padding:7px 0; border-top:1px solid var(--line);
+  }
+  .skill-col li:first-of-type{border-top:none;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  .contact-copy h2{font-family:'Instrument Serif', serif; font-weight:400; font-size:34px; margin:0 0 14px;}
+  .contact-copy p{color:var(--ink-soft); max-width:44ch; margin-bottom:26px;}
+  .direct-links{display:flex; flex-direction:column; gap:10px;}
+  .direct-links a{
+    font-family:'IBM Plex Mono', monospace; font-size:14px;
+    text-decoration:none; color:var(--ink);
+    display:flex; align-items:center; gap:10px;
+  }
+  .direct-links a:hover{color:var(--teal);}
+  .direct-links .k{color:var(--ink-soft); width:80px; flex-shrink:0;}
+
+  form.contact-form{display:flex; flex-direction:column; gap:14px;}
+  .contact-form label{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft);
+    margin-bottom:6px; display:block;
+  }
+  .contact-form input, .contact-form textarea{
+    width:100%; border:1px solid var(--line); background:#fff;
+    border-radius:6px; padding:11px 12px; font-family:'IBM Plex Sans', sans-serif;
+    font-size:14.5px; color:var(--ink);
+  }
+  .contact-form input:focus, .contact-form textarea:focus{
+    border-color:var(--teal); outline:none;
+  }
+  .contact-form textarea{resize:vertical; min-height:96px;}
+  .contact-form button{
+    align-self:flex-start; margin-top:4px;
+    font-family:'IBM Plex Mono', monospace; font-size:13.5px;
+    background:var(--teal); color:#fff; border:none;
+    padding:11px 22px; border-radius:6px; cursor:pointer;
+    transition:background .15s;
+  }
+  .contact-form button:hover{background:var(--teal-deep);}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--ink-soft);
+    display:flex; justify-content:space-between;
+  }
+
+  .reveal.pre{opacity:0; transform:translateY(16px);}
+  .reveal{transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width: 860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .active-cell{margin:0 auto; max-width:280px;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;}
+    .proj-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:repeat(2,1fr); row-gap:28px;}
+    .skill-col{border-left:none; border-top:1px solid var(--line); padding:24px 0 0;}
+    .skill-col:nth-child(odd){padding-right:20px;}
+    .role{grid-template-columns:1fr; gap:8px;}
+    .navlinks{display:none;}
+    footer{flex-direction:column; gap:6px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .cell-value, .cell-label{transition:none;}
+  }
+</style>
 </head>
 <body>
 
-<!-- HEADER SECTION -->
 <header>
-    <div class="container">
-        <!--💡UPDATE: Change to your name and title-->
-        <h1>Shivani Darshana</h1>
-        <p>Business Analyst </p>
-        <div class="social-links">
-            <!--💡UPDATE: Add your social media links and CV file-->
-            <a href="https://www.linkedin.com/in/shivanidk/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/shivzae" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="assets/resume_sk.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
-        </div>
+  <nav class="wrap">
+    <a href="#" class="brand">SHIVANI <span>KARIKALAN</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
+    <a class="btn" href="assets/resume.pdf" download>Résumé ↓</a>
+  </nav>
 </header>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="container">
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Business analyst — Chicago, IL</span>
+      <h1>I turn messy data<br>into decisions people<br>can <em>act</em> on.</h1>
+      <p class="lede">I find the signal in spreadsheets, SQL queries, and dashboards, then translate it into recommendations that stakeholders actually use — across product, marketing, and business analytics.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="assets/resume.pdf" download>Download résumé ↓</a>
+      </div>
+    </div>
+    <div class="active-cell" id="activeCell" aria-live="polite">
+      <span class="cell-ref" id="cellRef">B7</span>
+      <span class="cell-value" id="cellValue">75%</span>
+      <span class="cell-label" id="cellLabel">learner retention lift</span>
+      <span class="fill-handle" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <span class="col-letter">A</span>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-copy">
+        <p>I'm a business analyst who moved into data through psychology — which turns out to be useful, since most business problems are really questions about <strong>why people behave the way they do</strong>. I've spent the last year finding retention drop-offs in product data, mapping customer funnels for marketing teams, and building dashboards that people open more than once.</p>
+        <p>I recently completed my MBA in Business Analytics at Illinois Tech, and now work across product analytics, marketing analytics, and BI reporting — usually in SQL, Python, Tableau, and Power BI.</p>
+      </div>
+      <div class="stat-row">
+        <div>
+          <span class="label">Focus</span>
+          <span class="value">Product &amp; marketing analytics</span>
+        </div>
+        <div>
+          <span class="label">Base</span>
+          <span class="value">Chicago, Illinois</span>
+        </div>
+        <div>
+          <span class="label">Tools</span>
+          <span class="value">SQL · Python · Tableau · Power BI</span>
+        </div>
+        <div>
+          <span class="label">Education</span>
+          <span class="value">MBA, Business Analytics — IIT, 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="col-letter">B</span>
+    </div>
+    <div class="reveal">
+      <div class="role">
+        <div class="role-meta">
+          <div class="dates">Jul 2026 — Present</div>
+          <div class="place">Remote</div>
+        </div>
+        <div class="role-body">
+          <h3>Community Dreams Foundation Corp.</h3>
+          <div class="title">Marketing Analyst (Data Specialist), Volunteer</div>
+          <ul>
+            <li>Segmented audience behavior data to identify high-engagement customer groups, informing targeted campaign strategy and messaging.</li>
+            <li>Tracked conversion funnels across marketing channels, surfacing performance gaps and prioritization opportunities for the team.</li>
+            <li>Synthesized market and competitor trends into concise briefs that guided channel and budget decisions.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="role">
+        <div class="role-meta">
+          <div class="dates">Oct 2025 — Present</div>
+          <div class="place">Remote</div>
+        </div>
+        <div class="role-body">
+          <h3>Vumba Online</h3>
+          <div class="title">Business Analyst Intern</div>
+          <ul>
+            <li>Conducted behavioral analysis on 1,000+ learners, segmenting cohorts by engagement pattern to uncover the root causes behind a 75% retention lift.</li>
+            <li>Mapped end-to-end user process flows to expose friction points and ambiguity in product requirements, then redesigned key flows in Figma for clearer implementation.</li>
+            <li>Ran drop-off analysis across 10K+ session records to pinpoint the exact steps where learners disengaged within core modules.</li>
+            <li>Compared MVP performance pre- and post-release across multiple launches, translating findings into structured decision reports for the product team.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="role">
+        <div class="role-meta">
+          <div class="dates">Jun 2025 — Sep 2025</div>
+          <div class="place">Remote</div>
+        </div>
+        <div class="role-body">
+          <h3>Elevate Labs</h3>
+          <div class="title">Data Analyst Intern</div>
+          <ul>
+            <li>Wrangled and reconciled 5K+ records across disparate systems, resolving mismatches to restore reporting integrity.</li>
+            <li>Engineered 3+ self-updating reporting dashboards, cutting manual turnaround time by 30–40%.</li>
+            <li>Audited data pipelines across multiple sources to catch and correct recurring quality issues before they reached stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="col-letter">C</span>
+    </div>
+    <div class="proj-grid reveal">
+
+      <div class="card">
+        <div class="card-media">
+          <img src="assets/images/IMG_6957.jpeg" alt="AI in Marketing channel allocation dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">Tableau</span><span class="tag">Python</span><span class="tag">Scenario modeling</span></div>
+          <h3>AI in Marketing: Channel Allocation Framework</h3>
+          <p>Integrated four industry datasets covering $258.6B+ in digital ad spend, then built an interactive Tableau model analyzing 8 channels across 1,440 scenario combinations — with a proprietary allocation-pressure score to guide budget decisions.</p>
+          <span class="card-nolink">Case study available on request</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-media">
+          <svg width="110" height="110" viewBox="0 0 110 110" role="img" aria-label="67 percent balanced accuracy">
+            <circle cx="55" cy="55" r="42" fill="none" stroke="#D6DACC" stroke-width="12"/>
+            <circle id="accuracyArc" cx="55" cy="55" r="42" fill="none" stroke="#0E6E5A" stroke-width="12" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+            <text x="55" y="61" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="500" fill="#141A17">67%</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">R</span><span class="tag">Machine learning</span></div>
+          <h3>Teach For America Admissions Prediction</h3>
+          <p>Built and compared 7 predictive models — kNN, Naive Bayes, C5.0, CART, SVM, ANN, Apriori — on 74K+ applicant records, reaching 67% balanced accuracy and identifying the behavioral signals most predictive of admission.</p>
+          <span class="card-nolink">Case study available on request</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-media">
+          <img src="assets/images/screenshot of dashboard.png" alt="Costco sales performance dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span></div>
+          <h3>Costco Sales Performance Dashboard</h3>
+          <p>Interactive Power BI dashboard built on a star schema, analyzing revenue, profit, and margin across regions, segments, and product categories.</p>
+          <a class="card-link" href="https://github.com/shivzae/costco-dashboard-" target="_blank" rel="noopener">View documentation →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-media">
+          <img src="assets/images/meta dashboard.png" alt="Meta ad performance dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Ad analytics</span></div>
+          <h3>Meta Ad Performance Dashboard</h3>
+          <p>Analyzed 216K+ impressions and 25K+ clicks from Meta campaigns, identifying the top-performing demographics, geographies, and ad formats for conversion efficiency.</p>
+          <a class="card-link" href="https://github.com/shivzae/Meta-Ad-Performance-Dashboard" target="_blank" rel="noopener">View documentation →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-media">
+          <img src="assets/images/dashboard-overview.png" alt="Retail sales data warehouse dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
+          <h3>Retail Sales Warehouse Analysis</h3>
+          <p>End-to-end analytics build on a star-schema warehouse, turning raw retail sales data into insight on product performance, customer segments, and seasonal trends.</p>
+          <a class="card-link" href="https://github.com/shivzae/retail-sales-data-warehouse" target="_blank" rel="noopener">View documentation →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-media">
+          <img src="assets/images/shopify dashboard preview.png" alt="Shopify sales and customer funnel dashboard preview" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Funnel analysis</span></div>
+          <h3>Shopify Sales &amp; Customer Funnel Dashboard</h3>
+          <p>Unified view of sales performance, customer retention, and regional trends for a Shopify store, built to help stakeholders read funnel efficiency at a glance.</p>
+          <a class="card-link" href="https://github.com/shivzae/shopify-dashbaord-" target="_blank" rel="noopener">View documentation →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <span class="col-letter">D</span>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-col">
+        <span class="col-letter">A</span>
+        <h4>Querying &amp; programming</h4>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li>SQL — joins, CTEs, window functions</li>
+          <li>Python — Pandas, NumPy</li>
         </ul>
+      </div>
+      <div class="skill-col">
+        <span class="col-letter">B</span>
+        <h4>Visualization</h4>
+        <ul>
+          <li>Tableau</li>
+          <li>Power BI, DAX</li>
+          <li>Excel — Pivot Tables, Power Query</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <span class="col-letter">C</span>
+        <h4>Analysis &amp; method</h4>
+        <ul>
+          <li>EDA &amp; statistical analysis</li>
+          <li>A/B testing</li>
+          <li>Market research &amp; scenario modeling</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <span class="col-letter">D</span>
+        <h4>Platforms &amp; practice</h4>
+        <ul>
+          <li>Figma</li>
+          <li>Jira, Confluence</li>
+          <li>AWS Cloud, Agile/Scrum</li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </div>
+</section>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="section">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <!--💡UPDATE: Change the image to your own profile photo in assets/images/-->
-            <img src="assets/images/pp2.jpeg" alt="Shivani" class="profile-photo">
-            <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p> I'm a data professional with expertise in transforming complex datasets into actionable insights. My work focuses on creating interactive visualizations and data-driven stories that help organizations make informed decisions.</p>
-                <p>With experience in Power BI, SQL, and data modeling, I specialize in developing comprehensive reports that reveal hidden patterns and trends in data. This portfolio showcases my projects across various sectors.</p>
-            </div>
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid reveal">
+      <div class="contact-copy">
+        <h2>Let's talk data.</h2>
+        <p>Open to business analyst, product analyst, and marketing analytics roles. The fastest way to reach me is email — I usually reply within a day.</p>
+        <div class="direct-links">
+          <a href="mailto:kshivanidarshana@gmail.com"><span class="k">Email</span> kshivanidarshana@gmail.com</a>
+          <a href="https://linkedin.com/in/shivanidk" target="_blank" rel="noopener"><span class="k">LinkedIn</span> /in/shivanidk</a>
+          <a href="https://github.com/shivzae" target="_blank" rel="noopener"><span class="k">GitHub</span> /shivzae</a>
+          <a href="assets/resume.pdf" download><span class="k">Résumé</span> Download PDF ↓</a>
         </div>
-    </div>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section id="projects" class="section">
-    <div class="container">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
-
-            <!--💡UPDATE: Replace this with your own project. Add as many as you like!-->
-            <!-- Project 1 -->
-             <div class="project-card">
-                <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="assets/images/screenshot of dashboard.png" alt="Project One Preview">
-                <div class="project-card-content">
-                    <h3>Costco Sales Performance Dashboard </h3>
-                    <p>Built an interactive Power BI sales dashboard using a star schema, Power Query, and DAX to analyze revenue, profit, and margins across regions, segments, and product categories, enabling clear, data-driven business insights.</p>
-                    <div class="project-button">
-                        <!--💡UPDATE: Add link to your project's code/documentation on GitHub-->
-                        <a href="https://github.com/shivzae/costco-dashboard-" target="_blank" class="btn">Documentation</a>
-                   
-                       
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="assets/images/meta dashboard.png" alt="Project Two Preview">
-                <div class="project-card-content">
-                    <h3>Meta Ad Performance Dashboard </h3>
-                    <p>Analyzed 216K+ impressions and 25K+ clicks from Meta ad campaigns in Power BI, identifying top-performing demographics, geographies, and ad formats to improve conversion efficiency.</p>
-                    <div class="project-button">
-                        <a href="https://github.com/shivzae/Meta-Ad-Performance-Dashboard" target="_blank" class="btn">Documentation</a>
-                       
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/dashboard-overview.png" alt="Project Three Preview">
-                <div class="project-card-content">
-                    <h3>Retail Sales Warehouse Analysis</h3>
-                    <p>An end-to-end analytics project using PostgreSQL, SQL, Excel, and Power BI by Implementing a star schema structure for clean, scalable sales analytics. The project transforms raw retail sales data into actionable insights covering product performance, customer segmentation, seasonal trends, and revenue distribution</p>
-                    
-                   
-                    <div class="project-button">
-                        <a href="https://github.com/shivzae/retail-sales-data-warehouse" target="_blank" class="btn">Documentation</a>
-                       
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="assets/images/shopify dashboard preview.png" alt="Project Four Preview">
-                <div class="project-card-content">
-                    <h3>Shopify Sales and  Customer Funnel Dashboard</h3>
-                    <p>built to analyze sales performance, customer behavior, retention metrics, and regional insights for a Shopify e-commerce store. This dashboard helps stakeholders quickly understand revenue trends, customer funnel efficiency, and product performance in one unified view.</p>
-                    <div class="project-button">
-                        <a href="https://github.com/shivzae/shopify-dashbaord-" target="_blank" class="btn">Documentation</a>
-                       
-                    </div>
-                </div>
-            </div>
-
+      </div>
+      <form class="contact-form" action="mailto:kshivanidarshana@gmail.com" method="post" enctype="text/plain">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
-    </div>
-</section>
-
-<!-- SKILLS SECTION -->
-<section id="skills" class="section">
-    <div class="container">
-        <h2>Technical Skillset</h2>
-        <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Data Visualization</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Power BI</li>
-                    <li>Tableau</li>
-                    <li>Excel Dashboards</li>
-                </ul>
-            </div>
-
-            <!-- Column 2: Data Analysis -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
-                    <h3>Data Analysis</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>SQL</li>
-                    <li>Advanced Excel</li>
-                    <li>Python (Pandas)</li>
-                    <li>DAX</li>
-                    <li>ETL Processes</li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Data Modeling & ETL -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Skills</h3>
-                </div>
-                <ul class="skill-list">
-                    <li>Figma</li>
-                    <li>MS Suite</li>
-                    <li>AWS Cloud </li>
-                    <li>HTML,CSS</li>
-                    <li> Digital Marketing</li>
-                </ul>
-            </div>
-
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@company.com" required>
         </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What are you working on?" required></textarea>
+        </div>
+        <button type="submit">Send message →</button>
+      </form>
     </div>
+  </div>
 </section>
 
-<!-- CONTACT FORM SECTION -->
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Send me a message</h2>
-        
-        <!--💡UPDATE: Go to formsubmit.co and replace the email with your own-->
-        <form action="https://formsubmit.co/kshivanidarshana@gmail.com" method="POST" class="contact-form">
-            <p> Interested in collaborating or have questions about my work? I'd love to hear from you!</p>
-
-            <!-- Form Fields -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
-            </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Send Message</button>
-
-        </form>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <!--💡UPDATE: Change the year and your name-->
-        <p>&copy; 2026 Shivani. All rights reserved.</p>
-    </div>
+<footer class="wrap">
+  <span>© 2026 Shivani Karikalan.</span>
+  <span>Built in Chicago.</span>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // active cell cycling metrics
+  var metrics = [
+    { ref:'B7',  value:'75%',    label:'learner retention lift' },
+    { ref:'D12', value:'$258.6B', label:'ad-spend market mapped' },
+    { ref:'F3',  value:'74K+',   label:'applicant records modeled' },
+    { ref:'H9',  value:'30–40%', label:'faster reporting turnaround' },
+    { ref:'J5',  value:'1,440',  label:'scenarios simulated' }
+  ];
+  if(!reduceMotion){
+    var i = 0;
+    var cell = document.getElementById('activeCell');
+    var refEl = document.getElementById('cellRef');
+    var valEl = document.getElementById('cellValue');
+    var lblEl = document.getElementById('cellLabel');
+    setInterval(function(){
+      i = (i + 1) % metrics.length;
+      cell.classList.add('fade-out');
+      setTimeout(function(){
+        refEl.textContent = metrics[i].ref;
+        valEl.textContent = metrics[i].value;
+        lblEl.textContent = metrics[i].label;
+        cell.classList.remove('fade-out');
+      }, 250);
+    }, 3200);
+  }
+
+  // scroll reveal (progressive enhancement: content is visible by default)
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    reveals.forEach(function(el){ el.classList.add('pre'); });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); e.target.classList.remove('pre'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  // accuracy donut arc: 67%
+  var arc = document.getElementById('accuracyArc');
+  var r = 42, circumference = 2 * Math.PI * r;
+  var pct = 0.67;
+  arc.setAttribute('stroke-dasharray', circumference);
+  arc.setAttribute('stroke-dashoffset', circumference * (1 - pct));
+</script>
 
 </body>
 </html>
